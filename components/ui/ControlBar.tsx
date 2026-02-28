@@ -12,8 +12,8 @@ export function ControlBar({
   onDeselect,
 }: ControlBarProps) {
   return (
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center">
-      <div className="flex gap-px">
+    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center text-3xl gap-4">
+      <div className="flex gap-4">
         {[
           { label: "MOVE", mode: "translate" as const },
           { label: "ROTATE", mode: "rotate" as const },
@@ -21,7 +21,7 @@ export function ControlBar({
           <button
             key={mode}
             onClick={() => onModeChange(mode)}
-            className="text-[9px] tracking-[0.2em] px-6 py-3 transition-all duration-200 font-medium"
+            className="text-xl tracking-[0.2em] px-6 py-3 transition-all duration-200 font-medium rounded-md"
             style={{
               background:
                 transformMode === mode ? "#e63946" : "rgba(0,0,0,0.65)",
@@ -56,7 +56,7 @@ export function ControlBar({
               className="w-1.5 h-1.5 rounded-full"
               style={{ background: "#e63946", boxShadow: "0 0 6px #e63946" }}
             />
-            <span className="text-[9px] tracking-[0.2em] font-medium text-white/60">
+            <span className="text-xl tracking-[0.2em] font-medium text-white/60">
               {activeModel === "car1" ? "MODEL 01" : "MODEL 02"} —{" "}
               {transformMode === "translate"
                 ? "DRAG TO MOVE"

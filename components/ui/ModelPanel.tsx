@@ -34,20 +34,20 @@ export function ModelPanel({
           >
 
             <button
-              className="w-full text-left px-4 pt-3 pb-2"
+              className="w-full text-left p-4"
               onClick={() => onSelect(active ? null : id)}
             >
               <p
-                className="text-[8px] tracking-[0.3em] mb-1 font-medium"
+                className="text-xl tracking-[0.3em] mb-1 font-medium"
                 style={{ color: active ? "#e63946" : "rgba(255,255,255,0.25)" }}
               >
                 MODEL 0{i + 1}
               </p>
-              <p className="text-[13px] font-semibold tracking-wide text-white">
+              <p className="text-2xl font-semibold tracking-wide text-white">
                 {id === "car1" ? "VEHICLE A" : "VEHICLE B"}
               </p>
               <p
-                className="text-[8px] tracking-[0.15em] mt-1.5"
+                className="text-xl tracking-[0.15em] mt-1.5"
                 style={{ color: active ? "rgba(230,57,70,0.7)" : "rgba(255,255,255,0.18)" }}
               >
                 {active ? "● SELECTED" : "CLICK TO SELECT"}

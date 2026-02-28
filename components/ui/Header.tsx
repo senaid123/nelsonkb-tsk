@@ -6,13 +6,13 @@ type HeaderProps = {
 export function Header({ isTopDown, onViewToggle }: HeaderProps) {
   return (
     <header
-      className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-7 py-5"
+      className="absolute top-5 left-0 right-0 z-10 flex items-center justify-between px-7 py-5"
       style={{
         background:
           "linear-gradient(to bottom, rgba(0,0,0,0.9) 0%, transparent 100%)",
       }}
     >
-      <div>
+      <div className="m-10">
         <p
           className="text-[9px] tracking-[0.4em] font-light mb-1"
           style={{ color: "#e63946" }}
@@ -24,7 +24,7 @@ export function Header({ isTopDown, onViewToggle }: HeaderProps) {
         </h1>
       </div>
 
-      <div className="flex gap-px">
+      <div className="flex gap-4 mt-10 p-5">
         {(
           [
             { label: "3D VIEW", value: false },
@@ -34,7 +34,7 @@ export function Header({ isTopDown, onViewToggle }: HeaderProps) {
           <button
             key={label}
             onClick={() => onViewToggle(value)}
-            className="text-[9px] tracking-[0.2em] px-5 py-2.5 transition-all duration-200 font-medium"
+            className="text-xl tracking-[0.2em] px-5 py-2.5 transition-all duration-200 font-medium rounded-sm"
             style={{
               background:
                 isTopDown === value ? "#e63946" : "rgba(255,255,255,0.05)",
