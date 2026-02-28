@@ -2,13 +2,13 @@ import { initializeApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyATJUJeiaoXYMHoIdIAuK0gayoamsvKsLk",
-  authDomain: "nelson-cabinetry-task.firebaseapp.com",
-  projectId: "nelson-cabinetry-task",
-  storageBucket: "nelson-cabinetry-task.firebasestorage.app",
-  messagingSenderId: "364131729549",
-  appId: "1:364131729549:web:0f65c1d8b5b6ce6d5d22c4",
-  measurementId: "G-0Y096SH5W7",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 const app =
