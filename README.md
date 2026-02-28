@@ -1,14 +1,14 @@
 # 3D Showroom
 
-Web aplikacija za prikaz i pozicioniranje 3D modela automobila u realnom vremenu. Modeli se mogu pomjerati i rotirati, a sve se automatski čuva u bazu.
+Web aplikacija za prikaz i pozicioniranje 3D modela automobila u realnom vremenu napravljena sa Next.js, TailwindCSS i Three.js tehnologijama. Modeli se mogu pomjerati i rotirati, a sve se automatski čuva u bazu.
 
-## Šta radi
+## Funkcionalnosti
 
 - Učitava dva 3D modela automobila u scenu
-- Možeš ih prevlačiti po podu i rotirati
+- Mogućnost prevlačenja i rotacije
 - Automobili se ne mogu preklapati (detekcija kolizije)
-- Pogled se može prebaciti između 3D perspektive i pogleda odozgo
-- Sve pozicije i rotacije se čuvaju u Firestore bazu, pa ostaju i nakon refresha
+- Pregled se može birati između 3D i 2D perspektive.
+- Sve pozicije i rotacije se čuvaju u Firestore bazu (Čuvanje nako refresha)
 
 ## Tech stack
 
@@ -39,11 +39,11 @@ NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
 NEXT_PUBLIC_FIREBASE_APP_ID=...
 ```
 
-U Firestore konzoli treba omogućiti bazu (test mode je ok za razvoj).
+U Firestore konzoli treba omogućiti bazu
 
 ## Kako koristiti
 
-1. Klikni na vozilo da ga selektuješ (pojavi se crveni prsten)
+1. Klikni na vozilo za selekciju
 2. U donjem baru odaberi **MOVE** ili **ROTATE**
 3. Prevuci model mišem po sceni
 4. Klikni **TOP VIEW** u headeru za pogled odozgo
