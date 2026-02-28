@@ -12,8 +12,8 @@ export function ControlBar({
   onDeselect,
 }: ControlBarProps) {
   return (
-    <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex items-center text-3xl gap-4">
-      <div className="flex gap-4">
+    <div className="absolute bottom-5 lg:bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col lg:flex-row items-center gap-2 lg:gap-0 w-max">
+      <div className="flex gap-px">
         {[
           { label: "MOVE", mode: "translate" as const },
           { label: "ROTATE", mode: "rotate" as const },
@@ -21,7 +21,7 @@ export function ControlBar({
           <button
             key={mode}
             onClick={() => onModeChange(mode)}
-            className="text-xl tracking-[0.2em] px-6 py-3 transition-all duration-200 font-medium rounded-md"
+            className="text-[10px] lg:text-xl tracking-[0.2em] px-5 py-2.5 lg:px-6 lg:py-3 transition-all duration-200 font-medium"
             style={{
               background:
                 transformMode === mode ? "#e63946" : "rgba(0,0,0,0.65)",
@@ -41,11 +41,11 @@ export function ControlBar({
       {activeModel && (
         <>
           <div
-            className="w-px h-6 mx-4"
+            className="hidden lg:block w-px h-6 mx-4"
             style={{ background: "rgba(255,255,255,0.1)" }}
           />
           <div
-            className="flex items-center gap-3 px-4 py-3"
+            className="flex items-center gap-2 lg:gap-3 px-3 py-2 lg:px-4 lg:py-3"
             style={{
               background: "rgba(0,0,0,0.65)",
               border: "1px solid rgba(255,255,255,0.1)",
@@ -53,14 +53,17 @@ export function ControlBar({
             }}
           >
             <div
-              className="w-1.5 h-1.5 rounded-full"
+              className="w-1.5 h-1.5 rounded-full shrink-0"
               style={{ background: "#e63946", boxShadow: "0 0 6px #e63946" }}
             />
-            <span className="text-xl tracking-[0.2em] font-medium text-white/60">
+            <span className="text-[9px] lg:text-xl tracking-[0.2em] font-medium text-white/60 whitespace-nowrap">
               {activeModel === "car1" ? "MODEL 01" : "MODEL 02"} —{" "}
-              {transformMode === "translate"
-                ? "DRAG TO MOVE"
-                : "DRAG ← → TO SPIN"}
+              <span className="hidden lg:inline">
+                {transformMode === "translate" ? "DRAG TO MOVE" : "DRAG ← → TO SPIN"}
+              </span>
+              <span className="lg:hidden">
+                {transformMode === "translate" ? "MOVE" : "ROTATE"}
+              </span>
             </span>
             <button
               onClick={onDeselect}
